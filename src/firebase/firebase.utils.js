@@ -10,6 +10,15 @@ const config = {
     messagingSenderId: "1009843723657",
     appId: "1:1009843723657:web:1cc15bed60f94a280d9558"
 };
+
+export const createUserProfileDocument = async (userAuth, additonalData) => {
+    if (!userAuth) return;
+
+    const userRef = firestore.doc('users/sdfd');
+    const snapShot = await userRef.get();
+
+    console.log(snapShot);
+}
 // Initialize Firebase
 firebase.initializeApp(config);
 
